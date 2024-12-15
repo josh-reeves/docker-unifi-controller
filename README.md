@@ -24,8 +24,15 @@ Use docker to run the image in detached mode. At a minimum, the following ports 
 Example:  
 *docker run -d -p 8443:8443 -p 8080:8080 -p 10001:10001 -p 1900:1900 -p 123:123 joshreeves/docker-unifi-controller*
 
+Alternatively, the controller will also work if you provide the container with direct access to the host network:  
+*docker run -d --network host joshreeves/docker-unifi-controller*
+
 For a full list of available services and the associated ports that need to be published, reference Ubiquiti's official documentation:  
 https://help.ui.com/hc/en-us/articles/218506997-Required-Ports-Reference
 
-Alternatively, the controller will also work if you provide the container with direct access to the host network:  
-*docker run -d --network host joshreeves/docker-unifi-controller*
+Note that port 22, for SSH, is not currently exposed. It can still be manually published, of course, just be aware of any potential conflicts.
+
+Similarly, the container does not currently specify any volume mounts to persist the controller data. Instead, that functionality is deligated to the user at runtime.
+
+There are no currently plans to change this behavior. Both options can be easily overidden via Docker, and both are, in my opinion, sufficiently system specific to warrant leaving their implementation, or lack thereof, to the end-user.*/
+
