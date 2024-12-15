@@ -32,7 +32,7 @@ https://help.ui.com/hc/en-us/articles/218506997-Required-Ports-Reference
 
 Note that port 22, for SSH, is not currently exposed. It can still be manually published, of course, just be aware of any potential conflicts.
 
-Similarly, the container does not currently specify any volume mounts to persist the controller data. Instead, that functionality is deligated to the user at runtime.
+Similarly, the container does not currently specify any volume mounts to persist the controller data. Instead, that functionality is delegated to the user at runtime.
 
-There are no currently plans to change this behavior. Both options can be easily overidden via Docker, and both are, in my opinion, sufficiently system specific to warrant leaving their implementation, or lack thereof, to the end-user.*/
+There are no currently plans to change this behavior. Both options can be easily overidden via Docker, and both are, in my opinion, sufficiently system specific to warrant leaving their implementation, or lack thereof, to the end-user.
 
