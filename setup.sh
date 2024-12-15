@@ -3,11 +3,11 @@
 # Install Dependencies
 apt update && apt install -y wget gnupg curl 
 
-# Install MongoDB:
+# Add gpg and package list for MongoDB v7.0.X:
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
 echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 
-# Install UniFi:
+# Install UniFi (Automatically pulls in latest supported version of MongoDB):
 apt-get update && apt-get install ca-certificates apt-transport-https -y
 echo "deb [ arch=amd64,arm64 ] https://www.ui.com/downloads/unifi/debian stable ubiquiti" | tee /etc/apt/sources.list.d/100-ubnt-unifi.list
 
