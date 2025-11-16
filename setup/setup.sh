@@ -15,3 +15,7 @@ cd /etc/apt/trusted.gpg.d
 wget -q -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
 
 apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install unifi -y
+
+rm -rf /var/lib/apt/lists/*
+
+apt-get clean
